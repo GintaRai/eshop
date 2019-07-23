@@ -29,3 +29,13 @@ Route::group(['prefix' => 'category'], function(){
     Route::post('delete/{category}', 'CategoryController@destroy')->name('category.destroy');
     Route::get('show/{category}', 'CategoryController@show')->name('category.show');
  });
+
+ Route::group(['prefix' => 'product'], function(){
+    Route::get('', 'ProductController@index')->name('product.index');
+    Route::get('create', 'ProductController@create')->name('product.create');
+    Route::post('store', 'ProductController@store')->name('product.store');
+    Route::get('edit/{product}', 'ProductController@edit')->name('product.edit');
+    Route::post('update/{product}', 'ProductController@update')->name('product.update');
+    Route::post('delete/{product}', 'ProductController@destroy')->name('product.destroy');
+    Route::get('show/{product}', 'ProductController@show')->name('product.show');
+ });

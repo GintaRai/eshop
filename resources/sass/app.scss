@@ -6,3 +6,9 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
+input, textarea, select {
+    width: 100%;
+    margin: 10px 0;
+}
