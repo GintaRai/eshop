@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
@@ -29,6 +27,12 @@ Route::group(['prefix' => 'category'], function(){
     Route::post('delete/{category}', 'CategoryController@destroy')->name('category.destroy');
     Route::get('show/{category}', 'CategoryController@show')->name('category.show');
  });
+
+ Route::group(['prefix' => '/'], function(){
+    Route::get('products/{product_slug}', 'FrontController@singleProduct')->name('front.single-product');
+
+ });
+
 
  Route::group(['prefix' => 'product'], function(){
     Route::get('', 'ProductController@index')->name('product.index');
