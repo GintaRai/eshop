@@ -45,9 +45,11 @@ class DatabaseSeeder extends Seeder
         $faker = Faker::create();
 
         foreach(range(0, 29) as $val) {
+            $title = $faker->company();
             DB::table('categories')->insert([
-                'title' => $faker->company(),
+                'title' => $title,
                 'description' => $faker->realText(400),
+                'slug' => str_slug($title, '-'),
                 'parent' => 0
             ]);
         }
