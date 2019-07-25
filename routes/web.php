@@ -44,7 +44,7 @@ Route::group(['prefix' => 'category'], function(){
 
  Route::group(['prefix' => '/'], function(){
     Route::get('product/{product_slug}', 'FrontController@singleProduct')->name('front.single-product');
-    Route::get('category/{category_slug}', 'FrontController@singleProduct')->name('front.category');
+    Route::get('category/{category_slug}', 'FrontController@category')->name('front.category');
 
  });
 

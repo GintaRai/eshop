@@ -12,7 +12,7 @@
 					<div class="owl-carousel owl-theme s_Product_carousel">
                         @foreach ($product->productImages as $image)
 						<div class="single-prd-item">
-                            <img class="img-fluid" src="{{asset('img/'.$image->path)}}" alt="">
+                            <img class="img-fluid" src="{{asset('products/'.$image->path)}}" alt="">
 						</div>
                         @endforeach
 					</div>

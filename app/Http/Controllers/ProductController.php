@@ -13,12 +13,13 @@ class ProductController extends Controller
 
     public function index()
     {
-        //
+        $products = Product::all()->sortBy('title');
+        return view('product.index', ['products' => $products]);
     }
 
     public function create()
     {
-        $categories = Category::all();
+        $categories = Category::all()->sortBy('title');
         return view('product.create', ['categories' => $categories]);
     }
 

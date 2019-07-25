@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->decimal('discount', 8, 2);
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
-            $table->string('slug', 255);
+            $table->string('slug', 191)->unique();
             $table->integer('stock');
             $table->timestamps();
         });
